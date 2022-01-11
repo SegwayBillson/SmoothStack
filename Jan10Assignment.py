@@ -15,6 +15,9 @@ print(6**6)
 
 print(6+6+6+6+6+6)
 
+print("Hello World")
+
+print("Hello World : 10")
 
 def interest(p, r, l):
     r = (r/100)/12
