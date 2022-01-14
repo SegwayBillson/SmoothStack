@@ -1,3 +1,5 @@
+import functools
+
 #~~~~~~~~~~~~~~Day 4 a~~~~~~~~~~~~~~~
 
 def func():
@@ -91,3 +93,11 @@ def specific_cap(word):
 
 #~~~~~~~~~~~~~~Day 4 b ~~~~~~~~~~~~~~~
 
+def price_calc(lst):
+    return list(map(lambda x: ( x[0], (x[2] * x[3]) + (10 if x[2] * x[3] <= 100 else 0)), lst))
+
+    
+def price_calc2(lst):
+    return list(map(lambda x: ( x[0], functools.reduce(lambda a,b: a + (b[1]*b[2]), x) - x[0]),lst))
+
+print(price_calc2([[1,[1,2,10],[2,5,5]],[2,[3,3,11],[2,12,2]]]))
